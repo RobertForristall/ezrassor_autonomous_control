@@ -1,3 +1,4 @@
+from ast import arguments
 import os
 
 from ament_index_python.packages import get_package_share_directory
@@ -17,5 +18,12 @@ def generate_launch_description():
         Node(
             package=pkg_name,
             executable='test_control',
+            arguments=[
+                LaunchConfiguration('spawn_x'),
+                LaunchConfiguration('spawn_y'),
+                LaunchConfiguration('target_x'),
+                LaunchConfiguration('target_y')
+            ],
             output='screen'),
+            
     ])
