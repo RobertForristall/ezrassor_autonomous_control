@@ -25,7 +25,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'test_control = ezrassor_autonomous_control.test_control:main'
+            'test_control = ezrassor_autonomous_control.test_control:main',
+            'auto_controller = ezrassor_autonomous_control.auto_controller:main'
         ],
     },
 )

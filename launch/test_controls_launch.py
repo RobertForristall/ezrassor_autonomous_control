@@ -22,8 +22,15 @@ def generate_launch_description():
                 LaunchConfiguration('spawn_x'),
                 LaunchConfiguration('spawn_y'),
                 LaunchConfiguration('target_x'),
-                LaunchConfiguration('target_y')
+                LaunchConfiguration('target_y'),
+                LaunchConfiguration('model')
             ],
-            output='screen'),
+            output='screen'
+        ),
+        Node(
+            package=pkg_name,
+            executable='auto_controller',
+            output='screen',
+            arguments = [LaunchConfiguration('model')]),
             
     ])
